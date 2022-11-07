@@ -18,7 +18,8 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    pass
+    model = LogisticRegression(max_iter=100, random_state=42)
+    model.fit(X_train, y_train)
 
 
 def compute_model_metrics(y, preds):
