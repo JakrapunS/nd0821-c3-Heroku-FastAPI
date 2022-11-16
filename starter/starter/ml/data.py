@@ -1,6 +1,41 @@
 import numpy as np
+import pandas as pd
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
+def read_data(
+    path
+):
+    """
+    Read data from path.
+
+    Inputs
+    ------
+    path : text
+        path where data located.
+
+    Outputs
+    ------
+    df : pd.DataFrame
+    """
+    df = pd.read_csv(path)
+    return df
+
+def save_data(
+    output_path
+):
+    """
+    Read data from path.
+
+    Inputs
+    ------
+    path : text
+        path where data located.
+
+    Outputs
+    ------
+    df : pd.DataFrame
+    """
+    pd.write_csv(output_path, index = False)
 
 def process_data(
     X, categorical_features=[], label=None, training=True, encoder=None, lb=None
@@ -49,7 +84,7 @@ def process_data(
         X = X.drop([label], axis=1)
     else:
         y = np.array([])
-
+    print(categorical_features)
     X_categorical = X[categorical_features].values
     X_continuous = X.drop(*[categorical_features], axis=1)
 
@@ -68,3 +103,5 @@ def process_data(
 
     X = np.concatenate([X_continuous, X_categorical], axis=1)
     return X, y, encoder, lb
+
+
