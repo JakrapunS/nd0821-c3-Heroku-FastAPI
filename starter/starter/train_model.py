@@ -36,7 +36,7 @@ print(model.score(X_train,y_train))
 print(model.score(X_test,y_test))
 
 
-save_model(model,"ML_model.pkl")
+save_model(model,"RandomForest.pkl")
 save_model(encoder, "encoder.pkl")
 save_model(lb,  "label_binarizer.pkl")
 

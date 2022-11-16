@@ -1,5 +1,6 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 import pickle
 import pandas as pd
 import numpy as np
@@ -21,7 +22,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    model = LogisticRegression(max_iter=300, random_state=42)
+    model = RandomForestClassifier(n_estimators=100,min_samples_split=10, min_samples_leaf=5, random_state=42)
     model.fit(X_train, y_train)
     return model
 
@@ -101,7 +102,7 @@ def slice_matrix(test_data,Y_pred,features):
 
         slice_performance = pd.concat([precision, recall, TNR, NPV, f_score], axis=1)
         slice_performance.columns = ['Precision', 'Recall', 'TNR', 'NPV', 'F-Score']
-        slice_performance.to_csv(f"/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/Slicer_performance/slice_performance_{feature}.csv",index=False)
+        slice_performance.to_csv(f"/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/Slicer_performance/slice_performance_{feature}.csv")
 
     
 
