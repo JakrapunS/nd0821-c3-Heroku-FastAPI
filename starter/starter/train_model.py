@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 from ml.data import process_data
 from ml.model import train_model, save_model,slice_matrix
+from sklearn.metrics import classification_report
 # Add code to load in the data.
 data = pd.read_csv('/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/data/census.csv')
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
@@ -32,9 +33,6 @@ X_test, y_test, encoder, lb = process_data(
 )
 # Train and save a model.
 model = train_model(X_train, y_train)
-print(model.score(X_train,y_train))
-print(model.score(X_test,y_test))
-
 
 save_model(model,"RandomForest.pkl")
 save_model(encoder, "encoder.pkl")
@@ -43,4 +41,6 @@ save_model(lb,  "label_binarizer.pkl")
 pred = model.predict(X_test)
 
 slice_performance = slice_matrix(test,pred,cat_features)
-print(slice_performance)
+
+print("------- Random Forest test set performance -------")
+print(classification_report(y_test, pred))
