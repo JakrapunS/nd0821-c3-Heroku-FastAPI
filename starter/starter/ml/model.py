@@ -22,12 +22,14 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
+
     model = RandomForestClassifier(n_estimators=100,min_samples_split=10, min_samples_leaf=5, random_state=42)
     model.fit(X_train, y_train)
     return model
 
 def save_model(model,name):
     pickle.dump(model, open(f"nd0821-c3-Heroku-FastAPI/starter/model/{name}", 'wb'))
+
 
 
 def compute_model_metrics(y, preds):
