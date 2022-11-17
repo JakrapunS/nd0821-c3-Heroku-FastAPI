@@ -1,7 +1,6 @@
 """
 Unit test for ml model
 """
-from starter.ml.model import train_model
 from starter.train_model import model
 import os
 
