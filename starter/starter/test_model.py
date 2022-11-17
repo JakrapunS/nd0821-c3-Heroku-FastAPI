@@ -5,6 +5,7 @@ Unit test for ml model
 import pickle
 import pandas as pd
 import os
+import sklearn
 
 
 
