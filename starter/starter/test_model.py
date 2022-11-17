@@ -2,18 +2,13 @@
 Unit test for ml model
 """
 
-import os
-from ml.model import inference
+import pickle
 import pandas as pd
 
+model = pickle.load(open('/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/model/ML_model.pkl','rb'))
 
-
-
-
-def test_inference(model, data):
-    X, y = data
-    y_pred = inference(model, X)
-
-    assert len(y_pred) == len(y)
-    assert y_pred.any() == 1
+print(model.get_params())
+def test_model():
+    model = pickle.load(open('/starter/model/ML_model.pkl','rb'))
+    assert model.get_params()['max_iter'] == 300
 
