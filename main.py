@@ -25,20 +25,20 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
 app = FastAPI()
 
 class Item(BaseModel):
-    age: Optional[Union[int, list]] = [39, 31]
-    workclass: Optional[Union[str,list]] = ["State-gov","Private"]
-    fnlgt: Optional[Union[int,list]] = [77516, 45781]
-    education: Optional[Union[str, list]] = ['Bachelors', 'Masters']
-    education_num: Optional[Union[int, list]] = Field([13, 14], alias='education-num')
-    marital_status: Optional[Union[str, list]] = Field(['Never-married', 'Never-married'], alias='marital-status')
-    occupation: Optional[Union[str, list]] = ['Adm-clerical', 'Prof-specialty']
-    relationship: Optional[Union[str, list]] = ['Not-in-family', 'Not-in-family']
-    race: Optional[Union[str, list]] = ['White', 'White']
-    sex: Optional[Union[str, list]] = ['Male', 'Female']
-    capital_gain: Optional[Union[int, list]] = Field([2174, 14084], alias='capital-gain')
-    capital_loss: Optional[Union[int, list]] = Field([0, 0], alias='capital-loss')
-    hours_per_week: Optional[Union[int, list]] = Field([40, 50], alias='hours-per-week')
-    native_country: Optional[Union[str, list]] = Field(['United-States', 'United-States'], alias='native-country')
+    age: Optional[Union[int, list]] = [39]
+    workclass: Optional[Union[str,list]] = ["State-gov"]
+    fnlgt: Optional[Union[int,list]] = [77516]
+    education: Optional[Union[str, list]] = ['Bachelors']
+    education_num: Optional[Union[int, list]] = Field([13], alias='education-num')
+    marital_status: Optional[Union[str, list]] = Field(['Never-married'], alias='marital-status')
+    occupation: Optional[Union[str, list]] = ['Adm-clerical']
+    relationship: Optional[Union[str, list]] = ['Not-in-family']
+    race: Optional[Union[str, list]] = ['White']
+    sex: Optional[Union[str, list]] = ['Male']
+    capital_gain: Optional[Union[int, list]] = Field([2174], alias='capital-gain')
+    capital_loss: Optional[Union[int, list]] = Field([0], alias='capital-loss')
+    hours_per_week: Optional[Union[int, list]] = Field([40], alias='hours-per-week')
+    native_country: Optional[Union[str, list]] = Field(['United-States'], alias='native-country')
 
 
 class Config:

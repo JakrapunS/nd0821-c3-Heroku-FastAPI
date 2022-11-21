@@ -12,7 +12,7 @@ data = data.astype(str)
 
 
 
-X = data.iloc[10]
+X = data.iloc[0]
 y = X['salary']
 
 X.drop('salary')
