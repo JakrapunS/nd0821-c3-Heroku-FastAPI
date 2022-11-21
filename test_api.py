@@ -22,7 +22,7 @@ def test_pos_class():
     r = client.post("/model_inference", json=X.to_dict())
 
     assert r.status_code == 200
-    assert r.json() == {'Prediction': ['>50K']}
+    assert r.json() == {'Result': ['>50K']}
 
 def test_neg_class():
     r = client.post("/model_inference")
@@ -35,6 +35,6 @@ def test_neg_class():
     r = client.post("/model_inference", json=X.to_dict())
 
     assert r.status_code == 200
-    assert r.json() == {'Prediction': ['<=50K']}
+    assert r.json() == {'Result': ['<=50K']}
 
 

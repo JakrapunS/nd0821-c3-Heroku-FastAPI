@@ -3,11 +3,11 @@ import json
 import sys
 import pandas as pd
 
-sys.path.insert(0, '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter')
+#sys.path.insert(0, '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter')
 
 
 
-data = pd.read_csv('/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/data/census.csv')
+data = pd.read_csv('starter/data/census.csv')
 data = data.astype(str)
 
 
