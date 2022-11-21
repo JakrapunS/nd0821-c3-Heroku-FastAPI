@@ -17,7 +17,7 @@ y = X['salary']
 
 X.drop('salary')
 
-response = requests.post('https://jak-second-apps.herokuapp.com/model_inference',
+response = requests.post('https://income-prediction-heroku-jak.herokuapp.com/model_inference',
                          data=json.dumps(X.to_dict()))
                          
 print(f"Status Code: {response.status_code}")
