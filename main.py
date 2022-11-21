@@ -11,8 +11,8 @@ import sys
 
 sys.path.insert(0, '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter')
 
-from starter.ml.model import inference
-from starter.ml.data import process_data
+from starter.starter.ml.model import inference
+from starter.starter.ml.data import process_data
 
 import os
 
