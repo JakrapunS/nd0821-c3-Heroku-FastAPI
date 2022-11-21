@@ -7,7 +7,7 @@ import pandas as pd
 
 
 
-data = pd.read_csv('starter/data/census.csv')
+data = pd.read_csv('/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/data/census.csv')
 data = data.astype(str)
 
 
@@ -17,7 +17,7 @@ y = X['salary']
 
 X.drop('salary')
 
-response = requests.post('http://127.0.0.1:8000/model_inference',
+response = requests.post('https://income-prediction-heroku-jak.herokuapp.com/model_inference',
                          data=json.dumps(X.to_dict()))
                          
 print(f"Status Code: {response.status_code}")
