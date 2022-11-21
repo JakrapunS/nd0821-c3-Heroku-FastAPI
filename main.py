@@ -9,7 +9,7 @@ import sys
 
 
 
-sys.path.insert(0, '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter')
+#sys.path.insert(0, '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter')
 
 from starter.starter.ml.model import inference
 from starter.starter.ml.data import process_data
@@ -62,11 +62,11 @@ async def inference_post(data: Item):
     df = pd.DataFrame(data_dict)
 
     
-    #path = 'starter/model/RandomForest.pkl'
-    path = '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/model/RandomForest.pkl'
+    path = 'starter/model/RandomForest.pkl'
+    #path = '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/model/RandomForest.pkl'
     model = pickle.load(open(path,'rb'))
-    #path_encoder = 'starter/model/encoder.pkl'
-    path_encoder= '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/model/encoder.pkl'
+    path_encoder = 'starter/model/encoder.pkl'
+    #path_encoder= '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/model/encoder.pkl'
 
     encoder = pickle.load(open(path_encoder,'rb'))
 

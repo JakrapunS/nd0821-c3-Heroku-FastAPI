@@ -13,7 +13,7 @@ def test_get():
 
 def test_pos_class():
     r = client.post("/model_inference")
-    data = pd.read_csv('/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/data/census.csv')
+    data = pd.read_csv('starter/data/census.csv')
     data = data.astype(str)
     X = data.iloc[10]
     y = X['salary']
@@ -26,7 +26,7 @@ def test_pos_class():
 
 def test_neg_class():
     r = client.post("/model_inference")
-    data = pd.read_csv('/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter/data/census.csv')
+    data = pd.read_csv('starter/data/census.csv')
     data = data.astype(str)
     X = data.iloc[0]
     y = X['salary']
