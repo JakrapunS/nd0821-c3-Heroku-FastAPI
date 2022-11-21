@@ -1,9 +1,9 @@
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
 
 # Test API
-```
-run post_req.py in starter/starter/ml
-```
+
+* run post_req.py in starter/starter/ml
+
 
 # Environment Set up
 * Download and install conda if you don’t have it already.
