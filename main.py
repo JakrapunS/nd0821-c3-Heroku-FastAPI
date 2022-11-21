@@ -6,7 +6,7 @@ import pandas as pd
 import pickle
 
 import sys
-#test
+
 
 
 sys.path.insert(0, '/home/jakrapun/Heroku/nd0821-c3-Heroku-FastAPI/starter')
